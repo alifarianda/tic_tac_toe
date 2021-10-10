@@ -3,8 +3,6 @@ var turn = 1;
 // A $( document ).ready() block.
 $(document).ready(function()
 {
-    console.log( "ready!" );
-
     refreshUI();
 
     $("#resetButton").click(function()
@@ -22,13 +20,11 @@ $(document).ready(function()
 
         // Set resultBlocks
         $("#resultBlocks").html($("#totalBlocks").val() + "x" + $("#totalBlocks").val());
-        console.log("data: " + data);
-        console.log("data2: " + JSON.stringify(data));
 
         // Exec Ajax
         $.ajax(
         {
-            url: "http://localhost:8001/fwd/set-total-blocks",
+            url: "/fwd/set-total-blocks",
             type: "POST",
             contentType : "application/json",
             dataType: "json",
@@ -36,9 +32,6 @@ $(document).ready(function()
             timeout: 10000,
             success: function (dataP,status,xhr)
             {
-                console.log("dataP: " + dataP);
-                console.log("dataP2: " + JSON.stringify(dataP));
-
                 // Set Table Data
                 var strHTML = "<tr><td colspan='"+ parseInt($("#totalBlocks").val()) +"'></tr>";
                 for (var i = 0; i < parseInt($("#totalBlocks").val()); i++)
@@ -85,8 +78,6 @@ function refreshUI()
                 var col = $(this).data("col");
                 var btn = $(this);
 
-                console.log("row: " + row + ", col: " + col);
-
                 // Assign Data
                 var data =
                 {
@@ -99,7 +90,7 @@ function refreshUI()
                 // Exec Ajax
                 $.ajax(
                 {
-                    url: "http://localhost:8001/fwd/set-mark",
+                    url: "/fwd/set-mark",
                     type: "POST",
                     contentType : "application/json",
                     dataType: "json",
@@ -107,9 +98,6 @@ function refreshUI()
                     timeout: 10000,
                     success: function (dataP,status,xhr)
                     {
-                        console.log("dataP: " + dataP);
-                        console.log("dataP2: " + JSON.stringify(dataP));
-
                         if (dataP.status == "success" && dataP.msg == "")
                         {
                             $("#screen").text("PLAYER 2 TURN");
@@ -139,8 +127,6 @@ function refreshUI()
                 var col = $(this).data("col");
                 var btn = $(this);
 
-                console.log("row: " + row + ", col: " + col);
-
                 // Assign Data
                 var data =
                 {
@@ -153,7 +139,7 @@ function refreshUI()
                 // Exec Ajax
                 $.ajax(
                 {
-                    url: "http://localhost:8001/fwd/set-mark",
+                    url: "/fwd/set-mark",
                     type: "POST",
                     contentType : "application/json",
                     dataType: "json",
@@ -161,9 +147,6 @@ function refreshUI()
                     timeout: 10000,
                     success: function (dataP,status,xhr)
                     {
-                        console.log("dataP: " + dataP);
-                        console.log("dataP2: " + JSON.stringify(dataP));
-
                         if (dataP.status == "success" && dataP.msg == "")
                         {
                             $("#screen").text("PLAYER 1 TURN");
