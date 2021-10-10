@@ -5,7 +5,7 @@ This is my test projects for FWD Singapore which is a game called **Tic Tac Toe*
 
 How to run :
 - Make sure you have installed JDK/JRE 8.
-- Run (Recommended) : Open cmd, execute this command "java -jar /path/to/tic_tac_toe.jar".
+- Run (Recommended) : Open cmd, execute this command **"java -jar /path/to/tic_tac_toe.jar"**.
 - Run (Quick, Not Recommended) : Click 2x **tic_tac_toe.jar** file.
 - The app will be run on your computer portable, no need to deploy on server because it uses Spring Boot which already embed Tomcat.
 - Open web browser (recommended : Google Chrome), go to : http://localhost:8001/fwd/home.
