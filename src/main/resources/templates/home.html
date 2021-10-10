@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/custom.css}">
+    <script type="text/javascript" th:src="@{/home.js}"></script>
+</head>
+<body>
+    <!-- Heading -->
+    <div class="container-fluid text-center">
+        <h1>TIC TAC TOE</h1></div>
+    <br>
+    <br>
+    <div class="container-fluid text-center">
+
+        <input id="totalBlocks" type="number" placeholder="Total Blocks"/>
+
+        <h4 id="resultBlocks">0x0</h4>
+        <br>
+
+        <!-- Reset button for Game -->
+        <input id="resetButton" type="button"
+               class="col-md-4 col-lg-4 reset btn btn-lg btn-success btn-block"
+               value="EXEC/RESET" />
+        <br>
+        <br>
+        <br>
+
+        <!-- Inform area for player's turn -->
+        <h4 id="screen">
+            PLAYER 1 TURN
+        </h4>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">   </div>
+            <div class="col-lg-4">
+                <!-- Playing Canvas -->
+                <center>
+                    <table id="tableData">
+                    </table>
+                    <br>
+                    <br>
+                </center>
+            </div>
+            <div class="col-lg-4">   </div>
+        </div>
+    </div>
+</body>
+</html>
